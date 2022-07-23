@@ -6,7 +6,7 @@ if a and b are coprime:
 if p is prime:
     phi(p)=p-1
     phi(p^k)=p^k-p^(k-1)  ..[1 theke p^k er moddhe p^k/p ( or p^(k-1) ) gulo number p dea divide hy]
-    
+......................................................  
 void phi_1_to_n(int n) {
     vector<int> phi(n + 1);
     for (int i = 0; i <= n; i++)
@@ -19,3 +19,6 @@ void phi_1_to_n(int n) {
         }
     }
 }
+
+complexity: O(n log(logn))
+.................................................
