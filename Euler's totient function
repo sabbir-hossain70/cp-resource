@@ -1,2 +1,21 @@
  phi-function , counts the number of integers between 1 and n inclusive, which are coprime to n.(1 is considered to be coprime to any number).
 
+if a and b are coprime:
+     phi(a*b)= phi(a)*phi(b)
+     
+if p is prime:
+    phi(p)=p-1
+    phi(p^k)=p^k-p^(k-1)  ..[1 theke p^k er moddhe p^k/p ( or p^(k-1) ) gulo number p dea divide hy]
+    
+void phi_1_to_n(int n) {
+    vector<int> phi(n + 1);
+    for (int i = 0; i <= n; i++)
+        phi[i] = i;   
+
+    for (int i = 2; i <= n; i++) {
+        if (phi[i] == i) {         // i prime
+            for (int j = i; j <= n; j += i)
+                phi[j] -= phi[j] / i;
+        }
+    }
+}
