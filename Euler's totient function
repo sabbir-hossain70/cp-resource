@@ -1,0 +1,2 @@
+ phi-function , counts the number of integers between 1 and n inclusive, which are coprime to n.(1 is considered to be coprime to any number).
+
