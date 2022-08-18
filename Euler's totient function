@@ -3,6 +3,9 @@
 if a and b are coprime:
      phi(a*b)= phi(a)*phi(b)
      
+if a and b are not coprime:
+    phi(a*b)=phi(a)*phi(b)*gcd(a,b)/phi(gcd(a,b))
+     
 if p is prime:
     phi(p)=p-1
     phi(p^k)=p^k-p^(k-1)  ..[1 theke p^k er moddhe p^k/p ( or p^(k-1) ) gulo number p dea divide hy]
