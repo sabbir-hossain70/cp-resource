@@ -1,0 +1,24 @@
+used in inclusion-exclusion
+
+ex: find no of div<=20 who are divisible by either 2,3 or 4
+
+ans=[20/2]+[20/3]+[20/4]-[20/6]-[20/12]-[20/4]+[20/12]
+   =[20/2]+[20/3]-[20/6]
+   
+3 conditions:
+1. mob(n)=0     if n has a squared prime factor  [ex: 12=2*2*3 or 45=3*3*5]
+2. mob(n)=1     if n has even no of prime factors
+3.mob(n)=-1     if n has odd no of prime factors
+
+important property:
+sum of mobius no of all divisors is 0;
+ex: mob(12)+mob(6)+mob(4)+mob(3)+mob(2)+mob(1)=0
+
+using this property it can be calculated using sieve....
+
+
+mob[1]=1;
+for(i=1;i<=m;i++){
+  for(j=i+i;j<=m;j+=i) 
+    mob[j]-=mob[i];
+}
