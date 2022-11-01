@@ -1,0 +1,34 @@
+void init(ll node,ll x,ll y){
+    if(x==y){
+        tree[node]=a[x];
+        return;
+    }
+    ll m=(x+y)/2;
+    init(node+node,x,m);
+    init(node+node+1,m+1,y);
+    tree[node]=max(tree[node+node],tree[node+node+1]);
+}
+ 
+void update(ll node,ll ind,ll val,ll L,ll R){
+    if(ind>R||ind<L)return;
+    if(L>=ind&&R<=ind){
+        tree[node]=val;
+        return;
+    }
+ 
+    ll m=(L+R)/2;
+    update(node+node,ind,val,L,m);
+    update(node+node+1,ind,val,m+1,R);
+    tree[node]=max(tree[node+node],tree[node+node+1]);
+    return;
+}
+ 
+ll query(ll node,ll x,ll y,ll L,ll R){
+    if(y<L||x>R)return 0;
+    if(x<=L&&y>=R)return tree[node];
+    ll m=(L+R)/2;
+    ll r1=query(node+node,x,y,L,m);
+    ll r2=query(node+node+1,x,y,m+1,R);
+    return max(r1,r2);
+}
+ 
