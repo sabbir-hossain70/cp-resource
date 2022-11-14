@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using  namespace std;
+#define fast {ios_base::sync_with_stdio(false); cin.tie(0);}
+typedef long long ll;
+
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+
+ll rand(ll l,ll r){
+    uniform_int_distribution<ll>uid(l,r);
+    return uid(rng);
+}
+
+int main()
+{
+    fast
+    ll i,j,k,m,n,c,t,x,y;
+    for(i=0;i<1000;i++){
+    ll k=rand(1,10000000000000030);
+    cout<<k<<endl;
+    }
+}
+
