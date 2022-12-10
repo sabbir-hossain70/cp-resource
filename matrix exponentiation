@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using  namespace std;
+#define fast {ios_base::sync_with_stdio(false); cin.tie(0);}
+typedef long long ll;
+ll n,a,b,c,mod=10007;
+
+class matrix{
+public:
+    ll v[4][4];
+}mat;
+
+matrix mul(matrix A,matrix B){
+    matrix C;
+    for(ll i=0;i<4;i++){
+        for(ll j=0;j<4;j++){
+            ll sum=0;
+            for(ll k=0;k<4;k++){
+                sum+=A.v[i][k]*B.v[k][j];
+                sum%=mod;
+            }
+            C.v[i][j]=sum;
+        }
+    }
+    return C;
+}
+
+matrix exp(matrix b,ll p){
+    if(p==1)return b;
+    if(p%2==0){
+        b=exp(b,p/2);
+        return mul(b,b);
+    }
+    return mul(b,exp(b,p-1));
+}
