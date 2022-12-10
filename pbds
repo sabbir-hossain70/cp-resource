@@ -7,6 +7,8 @@ using namespace __gnu_pbds;
 #define os tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update>
 typedef long long ll;
 
+//s.erase(--s.lower_bound(val)); to delete in multiset
+
 int main()
 {
     fast
