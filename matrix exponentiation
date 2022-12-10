@@ -2,19 +2,20 @@
 using  namespace std;
 #define fast {ios_base::sync_with_stdio(false); cin.tie(0);}
 typedef long long ll;
-ll n,a,b,c,mod=10007;
+ll n,a,b,c,mod=1e9+7;
+const ll N=2;
 
 class matrix{
 public:
-    ll v[4][4];
+    ll v[N][N];
 }mat;
 
 matrix mul(matrix A,matrix B){
     matrix C;
-    for(ll i=0;i<4;i++){
-        for(ll j=0;j<4;j++){
+    for(ll i=0;i<N;i++){
+        for(ll j=0;j<N;j++){
             ll sum=0;
-            for(ll k=0;k<4;k++){
+            for(ll k=0;k<N;k++){
                 sum+=A.v[i][k]*B.v[k][j];
                 sum%=mod;
             }
@@ -31,4 +32,10 @@ matrix exp(matrix b,ll p){
         return mul(b,b);
     }
     return mul(b,exp(b,p-1));
+}
+
+int  main()
+{
+    ll i,j,k,n,m,c,x;
+
 }
